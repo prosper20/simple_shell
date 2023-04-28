@@ -2,13 +2,15 @@
 
 /**
  * get_help - function that retrieves help messages according builtin
+ *
  * @datash: data structure (args and input)
+ *
  * Return: Return 0
 */
 int get_help(data_shell *datash)
 {
 
-	if (datash->args[1] == 0)
+	if (datash->args[1] == 0) /* checks if args[1] is valid */
 		aux_help_general();
 	else if (_strcmp(datash->args[1], "setenv") == 0)
 		aux_help_setenv();

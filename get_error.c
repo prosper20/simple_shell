@@ -2,15 +2,18 @@
 
 /**
  * get_error - calls the error according the builtin, syntax or permission
+ *
  * @datash: data structure that contains arguments
+ *
  * @eval: error value
+ *
  * Return: error
  */
 int get_error(data_shell *datash, int eval)
 {
 	char *error = NULL;
 
-	switch (eval)
+	switch (eval) /* makes a swich to error value and checks for cases */
 	{
 	case -1:
 		error = error_env(datash);
@@ -31,7 +34,7 @@ int get_error(data_shell *datash, int eval)
 
 	if (error)
 	{
-		write(STDERR_FILENO, error, _strlen(error));
+		write(STDERR_FILENO, error, _strlen(error)); /* write to standard output error msg */
 		free(error);
 	}
 
