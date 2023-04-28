@@ -51,12 +51,19 @@ void set_data(data_shell *datash, char **av)
 }
 
 /**
- * main - Entry point
+ * main - entry point for unix command interpreter
  *
  * @ac: argument count
  * @av: argument vector
  *
- * Return: 0 on success.
+ * Description: this function sets ac to void since we
+ * wouldn't be using it, it makes a call to other
+ * functions to print a prompt and handle commands and execute them.
+ * it makes a first call to a function that sets the data
+ * and to another that sets the while looop so we see the prompt everytime
+ * and the third function that fress all allocated space
+ *
+ * Return: 0 on success
  */
 int main(int ac, char **av)
 {
